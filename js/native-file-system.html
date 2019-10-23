@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Read/Write file with Native File Sytem API</title>
+    <script>
+        let fileEntry
+        async function read() {
+            // Show a file picker to open a file.
+            fileEntry = await self.chooseFileSystemEntries({
+                type: 'openFile',
+                multiple: false, // If true, returns an array rather than a single handle.
+
+                // If true, the resulting file reference won't be writable. Note that there
+                // is no guarantee that the resulting file reference will be writable when
+                // readOnly is set to false. Both filesystem level permissions as well as
+                // browser UI/user intent might result in a file reference that isn't usable
+                // for writing, even if the website asked for a writable reference.
+                readOnly: false,
+
+                accepts: [{ description: 'Text File', extensions: ['txt', 'html', 'css', 'bat', 'sh', 'js', 'ts', 'json', 'java', 'py', 'dart'] }],
+                // suggestedStartLocation: 'pictures-library'
+            })
+            if (!fileEntry) {
+                // User cancelled, or otherwise failed to open a file.
+                return
+            }
+
+            // Read the contents of the file.
+            const fileReader = new FileReader()
+            fileReader.onloadend = async event => {
+                document.getElementById('fileContent').value = event.target.result
+            }
+
+            fileReader.onerror = error => {
+                console.error('Read file failed', error)
+                alert('Read file failed ' + error)
+            }
+
+            // fileEntry.getFile() method will reject if site (no longer) has access to the
+            // file.
+            let file = await fileEntry.getFile()
+
+            // readAsText() is async and returns immediately. fileReader's onloadend
+            // handler will be called with the result of the file read.
+            fileReader.readAsText(file)
+        }
+
+        async function save() {
+            if (!fileEntry) {
+                alert('Please select the file to read and write')
+                return
+            }
+            const btnSave = document.getElementById('btnSave')
+            btnSave.textContent = 'Writing File...'
+            btnSave.disabled = 'disabled'
+            // Write changed contents back to the file. Rejects if file reference is not
+            // writable. Note that it is not generally possible to know if a file
+            // reference is going to be writable without actually trying to write to it.
+            // For example, both the underlying filesystem level permissions for the
+            // file might have changed, or the user/user agent might have revoked write
+            // access for this website to this file after it acquired the file
+            // reference.
+
+            let fileWriter
+            try {
+                fileWriter = await fileEntry.createWriter()
+                console.log('fileWriter', fileWriter)
+                if (fileWriter) {
+                    try {
+                        await fileWriter.write(0, new Blob([document.getElementById('fileContent').value]))
+                        await fileWriter.close()
+                        alert('Write file successfully')
+                    } catch (e) {
+                        console.error('Write file failed', e)
+                        alert('Write file failed ' + e)
+                    }
+
+                    // // Can also write using a WritableStream
+                    // let stream =  fileWriter.asWritableStream()
+                    // // Can also write contents of a ReadableStream.
+                    // let response = await fetch('foo')
+                    // await response.body.pipeTo(stream)
+                }
+            } catch (e) {
+                console.error('Write file failed', e)
+                alert('Write file failed ' + e)
+            } finally {
+                btnSave.textContent = 'Write File'
+                btnSave.disabled = ''
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div>File Content</div>
+    <textarea id="fileContent" rows="10">
+    </textarea>
+    <button onclick="read()">Read File</button>
+    <button id="btnSave" onclick="save()">Write File</button>
+</body>
+
+</html>
