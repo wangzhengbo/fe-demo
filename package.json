@@ -4,7 +4,9 @@
   "description": "## Contains css, js and html code",
   "main": "index.js",
   "scripts": {
-    "build:sass": "sass sass:dist/css",
+    "clean": "rimraf dist",
+    "build:sass": "npm run clean && sass sass:dist/css",
+    "build:sass:watch": "npm run build:sass -- --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,6 +21,7 @@
   },
   "homepage": "https://github.com/wangzhengbo/fe-demo#readme",
   "dependencies": {
+    "rimraf": "^3.0.0",
     "sass": "^1.23.1"
   }
 }

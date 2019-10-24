@@ -1,0 +1,10 @@
+$colors: (indigo, red, green);
+
+ul {
+	@each $color in $colors {
+		$index: index($colors, $color);
+		li:nth-child(#{length($colors)}n + #{$index}) {
+			color: $color;
+		}
+	}
+}

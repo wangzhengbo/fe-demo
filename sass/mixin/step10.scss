@@ -1,0 +1,20 @@
+$colors: (indigo, red, green);
+
+// 参数设置默认值
+@mixin nth-color($child: "") {
+	@each $color in $colors {
+		$index: index($colors, $color);
+		&:nth-child(#{length($colors)}n + #{$index}) #{$child} {
+			color: $color;
+			@content ($color);
+		}
+	}
+}
+
+ul {
+	li {
+		@include nth-color using($color) {
+			border: 1px solid $color;
+		}
+	}
+}

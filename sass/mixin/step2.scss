@@ -1,0 +1,8 @@
+$colors: (indigo, red, green);
+
+@each $color in $colors {
+	$index: index($colors, $color);
+	.color-#{$index} {
+		color: $color;
+	}
+}

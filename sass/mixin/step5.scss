@@ -1,0 +1,14 @@
+$colors: (indigo, red, green);
+
+@mixin nth-color {
+	@each $color in $colors {
+		$index: index($colors, $color);
+		li:nth-child(#{length($colors)}n + #{$index}) {
+			color: $color;
+		}
+	}
+}
+
+ul {
+	@include nth-color;
+}
