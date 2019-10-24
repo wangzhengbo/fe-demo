@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // https://www.w3.org/TR/css-properties-values-api-1/
+        CSS.registerProperty({
+            name: "--stop-color",
+            syntax: "<color>",
+            inherits: false,
+            initialValue: "rgba(255, 0, 0, 1)"
+        });
+    </script>
+
+    <style>   
+        .button {
+            --stop-color: blue;
+            /* background: linear-gradient(var(--stop-color), black); */
+            background: var(--stop-color);
+            transition: --stop-color 3s;
+            font-size: 40px;
+            color: white;
+            /* height: 50px; */
+        }
+
+        .button:hover {
+            /* height: 100px; */
+            --stop-color: green;
+        }
+        </style>
+</head>
+<body>
+    <div class="button">Hello</div>
+</body>
+</html>
