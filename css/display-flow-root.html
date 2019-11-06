@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* https://github.com/fliptheweb/postcss-flow-root */
+        /* https://rachelandrew.co.uk/archives/2017/01/24/the-end-of-the-clearfix-hack/ */
+        .container {
+            display: block;
+            border: 1px solid red;
+        }
+        .container:not(:first-child) {
+            margin-top: 110px;
+        }
+        .container.flow-root {
+            display: flow-root; /* flow-root会创建自己的块级格式化上下文 */
+            border: 1px solid red;
+        }
+
+        .left {
+            float: left;
+            background: blue;
+            height: 100px;
+        }
+
+        .right {
+            float: right;
+            background: green;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            Left
+        </div>
+        <div class="right">
+            Right
+        </div>
+    </div>
+    <div class="container flow-root">
+        <div class="left">
+            Left - container with flow-root
+        </div>
+        <div class="right">
+            Right - container with flow-root
+        </div>
+    </div>
+</body>
+</html>
