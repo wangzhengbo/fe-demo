@@ -1,4 +1,3 @@
-
 function throttle(func, time) {
     let first = true
     let lastTime

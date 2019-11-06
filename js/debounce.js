@@ -1,4 +1,3 @@
-
 function debounce(func, time) {
     let timer
 
