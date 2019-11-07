@@ -1,0 +1,29 @@
+{
+  "name": "flow-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "flow": "flow",
+    "flow:all": "flow check --all",
+    "flow:status": "flow status",
+    "build:babel": "babel src/ -d lib-babel/",
+    "build": "flow-remove-types src/ -d lib/",
+    "build:pretty": "flow-remove-types --pretty src/ -d lib-pretty/",
+    "build:pretty:all": "flow-remove-types --pretty --all src/ -d lib-pretty-all/",
+    "ncu": "ncu",
+    "ncu:upgrade": "ncu -u",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "~7.7.0",
+    "@babel/core": "~7.7.2",
+    "@babel/preset-flow": "~7.0.0",
+    "flow-bin": "~0.111.3",
+    "flow-remove-types": "~2.111.3",
+    "npm-check-updates": "^3.2.0"
+  }
+}

@@ -1,0 +1,17 @@
+[ignore]
+.*/node_modules/.*
+.*/lib/.*
+.*/lib-babel/.*
+.*/lib-pretty/.*
+.*/lib-pretty-all/.*
+
+[include]
+src
+
+[libs]
+
+[lints]
+
+[options]
+
+[strict]
