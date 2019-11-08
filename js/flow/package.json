@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "typed": "flow-typed install",
     "flow": "flow",
     "flow:all": "flow check --all",
     "flow:status": "flow status",
@@ -18,12 +19,18 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.4.1",
+    "lodash": "~4.17.15",
+    "underscore": "~1.9.1"
+  },
   "devDependencies": {
     "@babel/cli": "~7.7.0",
     "@babel/core": "~7.7.2",
     "@babel/preset-flow": "~7.0.0",
     "flow-bin": "~0.111.3",
     "flow-remove-types": "~2.111.3",
-    "npm-check-updates": "^3.2.0"
+    "flow-typed": "~2.6.2",
+    "npm-check-updates": "~3.2.0"
   }
 }
