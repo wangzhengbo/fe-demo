@@ -1,0 +1,19 @@
+{
+  "name": "postcss",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^9.7.1",
+    "postcss": "^7.0.21",
+    "postcss-gradient-polyfill": "^1.0.4",
+    "webp-in-css": "^0.3.0"
+  }
+}

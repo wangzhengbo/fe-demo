@@ -1,0 +1,17 @@
+{
+  "name": "coffeescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "coffee --compile --bare --no-header --output dist/ src/",
+    "watch": "coffee --watch --compile --bare --no-header --output dist/ src/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "coffeescript": "^2.4.1"
+  }
+}

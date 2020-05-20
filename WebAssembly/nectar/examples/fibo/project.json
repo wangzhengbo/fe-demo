@@ -1,0 +1,1 @@
+{"main": "fibo.js", "out": "fibo-mac-osx.bin", "target":"mac-osx", "preset":"speed", "env": "std"}

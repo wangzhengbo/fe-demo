@@ -1,0 +1,16 @@
+{
+  "version": 3,
+  "engine": "v2",
+  "file": "sum.js",
+  "sourceRoot": "",
+  "sources": ["org-dartlang-sdk:///sdk/lib/_internal/js_runtime/lib/js_primitives.dart","sum.dart","org-dartlang-sdk:///sdk/lib/_internal/js_runtime/lib/internal_patch.dart","org-dartlang-sdk:///sdk/lib/core/print.dart"],
+  "names": ["printString","main","print","num","Object","throwCyclicInit","closureFromTearOff","int","double","String","bool","Null","List","toString","printToConsole"],
+  "mappings": "A;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;iBAmBKA;MACHA;;QAGEA,MAyBJA;;;;QAlBIA,MAkBJA;;MAdEA;QACEA,MAaJA;MATEA;;QAEEA,MAOJA;;;K;;;UCvCAC;MACMA;MACJA;QACEA;MC2BFC;IDxBFD,C",
+  "x_org_dartlang_dart2js": {
+    "minified_names": {
+      "global": "printString,0,num,3,Object,4,main,1,throwCyclicInit,5,closureFromTearOff,6,int,7,double,8,String,9,bool,10,Null,11,List,12",
+      "instance": "toString$0,13"
+    },
+    "frames": "ktUCcEEAEFEY6B,A;"
+  }
+}

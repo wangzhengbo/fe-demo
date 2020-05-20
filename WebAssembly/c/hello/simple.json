@@ -1,0 +1,3 @@
+{"source_filename": "simple.wat",
+ "commands": [
+  {"type": "module", "line": 2, "filename": "simple.0.wasm"}]}

@@ -21,7 +21,13 @@
   },
   "homepage": "https://github.com/wangzhengbo/fe-demo#readme",
   "dependencies": {
+    "@feathersjs/hooks": "^0.2.0",
     "rimraf": "^3.0.0",
     "sass": "^1.23.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.0",
+    "@babel/core": "^7.7.2",
+    "babel-preset-mobx": "^2.0.0"
   }
 }

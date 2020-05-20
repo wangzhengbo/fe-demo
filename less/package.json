@@ -1,0 +1,20 @@
+{
+  "name": "less",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "lessc src/index.less",
+    "format": "prettier --parser css --write \"./src/**/*.less\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "less": "^3.10.3",
+    "postcss": "^7.0.23",
+    "postcss-less": "^3.1.4",
+    "prettier": "^1.19.1"
+  }
+}

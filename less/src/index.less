@@ -1,0 +1,108 @@
+.loop (@pos) {
+  each(range(5), {
+      @len: @value * 5;
+
+      .padding-@{len} {
+          padding: (@len * 1px);
+      }
+
+      .padding-@{pos}-@{len} {
+          padding-@{pos}: (@len * 1px);
+      }
+
+      .margin-@{len} {
+          margin: (@len * 1px);
+      }
+
+      .margin-@{pos}-@{len} {
+          margin-@{pos}: (@len * 1px);
+      }
+  });
+}
+
+@pos: top, right, bottom, left;
+each(@pos,{
+    .loop(@value)
+})
+
+
+@direction: left, center, right;
+each(@direction, {
+    .text-@{value} {
+        text-align: @value;
+    }
+})
+  .colors
+  () {
+  primary: #1890ff;
+  primary-light: rgba(#1890ff, 0.2);
+  danger: #f5222d;
+  danger-light: rgba(#f5222d, 0.2);
+  default: #000000;
+  default-light: rgba(#000000, 0.2);
+  success: #52c41a;
+  success-light: rgba(#52c41a, 0.2);
+  warning: #faad14;
+  warning-light: rgba(#faad14, 0.2);
+  tip: rgba(0, 0, 0, 0.45);
+  tip-light: rgba(0, 0, 0, 0.25);
+}
+
+each(.colors(), .(@value, @key, @index) {
+    .text-@{key} {
+        color: @value;
+    }
+
+    .bg-@{key} {
+        background: @value;
+    }
+})
+  .sizes
+  () {
+  small: 12;
+  normal: 14;
+  large: 16;
+  large-xl: 18;
+  large-xxl: 22;
+}
+
+each(.sizes(), .(@value, @key, @index) {
+    .font-@{key} {
+        font-size: (@value * 1px);
+    }
+})
+  .text-bold {
+  font-weight: bold;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-item {
+  flex-grow: 1;
+}
+
+.flex-static {
+  flex-shrink: 0;
+}
+
+.flex-center-y {
+  align-items: center;
+}
+
+.flex-center-x {
+  justify-content: center;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.overflow-auto {
+  overflow: auto;
+}

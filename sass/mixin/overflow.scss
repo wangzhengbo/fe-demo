@@ -1,0 +1,26 @@
+@mixin overflow-scroll($direction: false) {
+	$property: if($direction, 'overflow-#{$direction}', 'overflow');
+
+    #{$property}: overflow;
+	-webkit-overflow-scrolling: touch;
+}
+
+div {
+	@include overflow-scroll;
+}
+
+div.true {
+	@include overflow-scroll(true);
+}
+
+div.x {
+	@include overflow-scroll(x);
+}
+
+div.y {
+	@include overflow-scroll('y');
+}
+
+div.y {
+	@include overflow-scroll("z");
+}

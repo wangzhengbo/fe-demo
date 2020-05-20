@@ -1,0 +1,12 @@
+div {
+  display: flex;
+  background: linear-gradient(to right, red, blue);
+}
+
+.logo {
+  width: 30px;
+  height: 30px;
+  background: url(/logo.png);
+  background: red;
+  border: url(/logo.png);
+}

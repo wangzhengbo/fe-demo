@@ -1,0 +1,1 @@
+{"main": "fiboit.js", "out": "fiboit-mac-osx.bin", "target":"mac-osx", "preset":"size", "env": "std"}

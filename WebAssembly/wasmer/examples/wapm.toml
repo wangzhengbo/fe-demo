@@ -1,0 +1,17 @@
+[package]
+name = "wasmer"
+version = "1.0.0"
+description = ""
+license = "ISC"
+
+[[module]]
+name = "entry"
+source = "entry.wasm"
+abi = "wasi"
+
+[module.interfaces]
+wasi = "0.0.0-unstable"
+
+[[command]]
+name = "entry"
+module = "entry"
